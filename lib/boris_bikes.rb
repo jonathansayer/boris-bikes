@@ -19,4 +19,36 @@ class DockingStation
 
   end
 
+  def release_bike
+
+    if self.not_empty?  
+      @working_bikes = @working_bikes - 1
+    else
+      puts "Sorry, no bikes are available"
+    end
+
+  end
+
+  def deposit_bike
+
+    if self.not_full 
+
+  end
+
+  def not_empty?
+
+    @working_bikes != 0
+
+  end
+
+  def not_full?
+
+    @working_bikes + @faulty_bikes != 20
+
+  end
+
 end
+
+class bike
+
+  end
