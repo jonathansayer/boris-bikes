@@ -31,8 +31,21 @@ class DockingStation
 
   def deposit_bike
 
-    if self.not_full 
-
+    if self.not_full?
+      puts 'Is the bike faulty? Please reply "yes or no"'
+      answer=gets.chomp
+        if answer.downcase == "yes"
+          @faulty_bikes+=1
+          puts "Sorry for the inconvenince"
+        elsif answer.downcase == 'no'
+          @working_bikes +=1
+          puts "Thank you for using Boris bikes!"
+        else
+          puts "You did not reply yes or no"
+        end
+    else
+      puts "This station is full!"
+    end
   end
 
   def not_empty?
@@ -44,11 +57,15 @@ class DockingStation
   def not_full?
 
     @working_bikes + @faulty_bikes != 20
-
   end
 
 end
 
 class bike
 
-  end
+  def initialize
+    if rand(5) == 1
+      
+
+end
+
